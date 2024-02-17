@@ -1,0 +1,76 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AvaloniaApplication1.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             Background="#FF141414"
+             x:Class="AvaloniaApplication1.Views.MainView"
+             Name="userContol"
+             x:DataType="vm:MainViewModel">
+	<Design.DataContext>
+		<vm:MainViewModel />
+	</Design.DataContext>
+
+	<UserControl.Styles>
+		<StyleInclude Source="/Styles/Styles1.axaml" />
+	</UserControl.Styles>
+
+	<Grid Grid.Row="1">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="215" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+
+		<!-- Левая часть -->
+		<Panel Background="#FF1F1F1F" ZIndex="1" >
+			<StackPanel Grid.Column="0" Spacing="10" Margin="10,10,10,0" HorizontalAlignment="Stretch">
+				<!-- Ваше содержимое для левой части -->
+				<Button Name="LaunchButton" Content="LAUNCH" Click="MenuButtonPressed"/>
+				<Button Name="ModsButton" Content="MODS" Click="MenuButtonPressed"/>
+				<Button Name="VersionsButton" Content="VERSIONS" Click="MenuButtonPressed"/>
+				<Button Name="ChangelogButton" Content="CHANGELOG" Click="MenuButtonPressed"/>
+
+			</StackPanel>
+		</Panel>
+
+
+		<!-- Правая часть -->
+		<StackPanel Width="NaN" Name="StackPanelRight" Grid.Column="1" Margin="5,10,5,10" HorizontalAlignment="Stretch" Spacing="10">
+			<!-- Ваше содержимое для правой части -->
+			<!-- Launch Window Panel -->
+			<StackPanel Name="LaunchWindow" IsVisible="True">
+				<TextBox Name="tb" TextAlignment="Center" Watermark="Project Arrhythmia Folder Path"/>
+				<TextBox TextAlignment="Center" Watermark="Project Arrhythmia Folder Path"/>
+				<Button Content="{Binding Greeting}">ggggg</Button>
+				<Button>ggggg</Button>
+				<Button>ggggg</Button>
+			</StackPanel>
+			<!-- Mods Window Panel -->
+			<StackPanel Name="ModsWindow" IsVisible="False">
+				<Label>MODS WINDOW PAGE</Label>
+				<Button>aaaaa</Button>
+				<Button>ggggg</Button>
+				<Button>ggggg</Button>
+				<Button>ggggg</Button>
+			</StackPanel>
+			<!-- Versions Panel -->
+			<StackPanel Name="VersionsWindow" IsVisible="False">
+				<Label>VERSIONS WINDOW PAGE</Label>
+				<Button>aaaaa</Button>
+				<Button>ggggg</Button>
+				<Button>ggggg</Button>
+				<Button>ggggg</Button>
+			</StackPanel>
+			<!-- Changelog Window -->
+			<StackPanel Name="ChangelogWindow" IsVisible="False">
+				<Label>CHANGELOG WINDOW PAGE</Label>
+				<Button>aaaaa</Button>
+				<Button>ggggg</Button>
+				<Button>ggggg</Button>
+				<Button>ggggg</Button>
+			</StackPanel>
+
+		</StackPanel>
+	</Grid>
+</UserControl>
